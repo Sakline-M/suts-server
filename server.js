@@ -1,5 +1,6 @@
 import express from "express";
 import colors from "colors";
+import cors from 'cors'
 import dotenv from "dotenv";
 import morgan from "morgan";
 import userRoute from "./routes/userRoutes.js";
@@ -15,6 +16,7 @@ const app = express();
 
 //middlewares
 app.use(express.json());
+app.use(cors())
 app.use(morgan("dev"));
 
 //routes
