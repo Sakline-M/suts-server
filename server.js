@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import userRoute from "./routes/userRoutes.js";
 import connectDB from "./config/mongoDB.js";
+import courseRoute from "./routes/courseRoute.js";
 
 //config dotenv
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(morgan("dev"));
 
 //routes
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/courses", courseRoute);
 
 // homepage
 app.get("/", (req, res) => {
