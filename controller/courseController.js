@@ -40,7 +40,7 @@ export const getAllCourse = async (req, res) => {
       const limit = req.query.limit;
       skip = (page - 1) * parseInt(limit);
     }
-    
+
     // query
     const courses = await Course.find(query).sort(sort).skip(skip).limit(limit);
 
@@ -54,4 +54,12 @@ export const getAllCourse = async (req, res) => {
       error: error,
     });
   }
+};
+
+export const getSingleCourseData = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const course =await Course.findById(id);
+    res.send(course);
+  } catch (error) {}
 };

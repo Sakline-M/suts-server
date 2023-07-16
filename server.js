@@ -7,6 +7,8 @@ import userRoute from "./routes/userRoutes.js";
 import connectDB from "./config/mongoDB.js";
 import courseRoute from "./routes/courseRoute.js";
 import blogRoute from "./routes/blogRoutes.js";
+import orderRoute from "./routes/orderRoute.js";
+
 
 //config dotenv
 dotenv.config();
@@ -24,6 +26,7 @@ app.use(morgan("dev"));
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/blog", blogRoute);
+app.use("/api/v1/order", orderRoute);
 
 // homepage
 app.get("/", (req, res) => {
