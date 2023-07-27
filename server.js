@@ -8,6 +8,7 @@ import connectDB from "./config/mongoDB.js";
 import courseRoute from "./routes/courseRoute.js";
 import blogRoute from "./routes/blogRoutes.js";
 import orderRoute from "./routes/orderRoute.js";
+import studyRoute from "./routes/stduyRoutes.js";
 
 
 //config dotenv
@@ -27,6 +28,8 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/blog", blogRoute);
 app.use("/api/v1/order", orderRoute);
+app.use("/api/v1/study", studyRoute);
+
 
 // homepage
 app.get("/", (req, res) => {

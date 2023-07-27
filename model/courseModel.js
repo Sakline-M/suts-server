@@ -30,7 +30,7 @@ const courseSchema = mongoose.Schema({
     required: true,
   },
   course_time: {
-    type : String,
+    type: String,
     required: true,
   },
   teacher: {
@@ -53,6 +53,10 @@ const courseSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  studying: {
+    type : Boolean,
+    required : true,
+  }
 });
 
 const Course = mongoose.model('course', courseSchema);
